@@ -8,7 +8,6 @@ namespace FormationCS
 {
     static class outils
     {
-
         public static int DemanderNombrePositifNonNul(string question)
         {
             return DemanderNombreEntre(question, 1, int.MaxValue, "ERREUR: le nombre doit être positif et non nul");
@@ -34,7 +33,6 @@ namespace FormationCS
                 }
                 Console.WriteLine();
             }
-
         }
 
         public static int DemanderNombre(string question)

@@ -7,7 +7,6 @@ namespace generateur_mot_de_passe
 {
     class Program
     {
-
         static void Main(string[] args)
         {
             const int NB_MOTS_DE_PASSE = 10;
@@ -21,7 +20,6 @@ namespace generateur_mot_de_passe
             string caractereSpeciaux = "#&+-!/";
             string alphabet;
             string motDePasse = "";
-
 
             Console.WriteLine();
             int choixAlphabet = outils.DemanderNombreEntre("Vous voulez un mot de passe avec:\n" +
