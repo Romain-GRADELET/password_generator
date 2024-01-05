@@ -11,10 +11,10 @@ namespace FormationCS
 
         public static int DemanderNombrePositifNonNul(string question)
         {
-            return DemanderNombreEntre(question, 1, int.MaxValue);
+            return DemanderNombreEntre(question, 1, int.MaxValue, "ERREUR: le nombre doit être positif et non nul");
         }
 
-        public static int DemanderNombreEntre(string question, int min, int max)
+        public static int DemanderNombreEntre(string question, int min, int max, string messageErreurPersonnalise = null)
         {
             while (true)
             {
@@ -24,7 +24,15 @@ namespace FormationCS
                     // Valide
                     return nombre;
                 }
-                Console.WriteLine("ERREUR: Le nombre doit être compris entre " + min + " et " + max);
+                if (messageErreurPersonnalise == null)
+                {
+                    Console.WriteLine("ERREUR: Le nombre doit être compris entre " + min + " et " + max);
+                }
+                else
+                {
+                    Console.WriteLine(messageErreurPersonnalise);
+                }
+                Console.WriteLine();
             }
 
         }
@@ -33,12 +41,9 @@ namespace FormationCS
         {
             while (true)
             {
-                // Poser la question
                 Console.Write(question);
-                // Récupérer la réponse
                 string reponse = Console.ReadLine();
-                // Convertir
-                // Gérer l'erreur de conversion
+                // Conversion et gestion de l'erreur de conversion
                 try
                 {
                     int passwordLength = int.Parse(reponse);
@@ -47,6 +52,7 @@ namespace FormationCS
                 catch
                 {
                     Console.WriteLine("ERREUR: Veuillez rentrer un nombre valide");
+                    Console.WriteLine();
                 }
                 // Boucler tant que l'on a pas reçu une réponse valide (qui contient que des chiffres)
             }

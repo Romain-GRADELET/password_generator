@@ -52,14 +52,16 @@ namespace generateur_mot_de_passe
             Random rand = new Random();
 
             //Console.WriteLine(alphabet[index]);
+            Console.WriteLine();
             for (int j = 0; j < NB_MOTS_DE_PASSE; j++)
             {
+                motDePasse = "";
                 for (int i = 0; i < longueurMotDePasse; i++)
                 {
                     int index = rand.Next(0, longueurAlphabet);
                     motDePasse += alphabet[index];
                 }
-                Console.WriteLine("mot de passe : " + motDePasse);
+                Console.WriteLine("mot de passe N°" + (j+1) +  " : " + motDePasse);
             }
         }
     }
