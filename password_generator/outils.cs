@@ -8,17 +8,9 @@ namespace FormationCS
 {
     static class outils
     {
+
         public static int DemanderNombrePositifNonNul(string question)
         {
-            /*int nombre = DemanderNombre(question);
-            if (nombre > 0) 
-            {
-                return nombre;
-            }
-            Console.WriteLine("ERREUR: Veuillez renseigner un nombre supérieur à 0");
-
-            return DemanderNombrePositifNonNul(question);*/
-
             return DemanderNombreEntre(question, 1, int.MaxValue);
         }
 
@@ -39,7 +31,6 @@ namespace FormationCS
 
         public static int DemanderNombre(string question)
         {
-
             while (true)
             {
                 // Poser la question
